@@ -21,10 +21,11 @@ location = places.get("Meadow")
 while playing:
     i = input("What next?: ")
     if i == "move":
-        print(f"Neighbors: {', '.join([a.Name for a in location.Neighbors])}")
+        print(f"\t(Neighbors: {', '.join([a.Name for a in location.Neighbors])})")
         a = input("Where would you like to go?: ")
         if a in places.keys():
             location = places.get(a)
+            print(f"You move to the {location.Name}")
         else:
             print(f"No such place {a}")
     elif i == 'say':
