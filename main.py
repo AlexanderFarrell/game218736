@@ -1,6 +1,6 @@
 places = dict()
 class Place:
-    def __init__(self, name, desc, things=[]):
+    def __init__(self, name, desc=" in a place you can't make out.", things=[]):
         self.Name = name
         places[name] = self
         self.Neighbors = []
@@ -15,6 +15,26 @@ class Place:
 
 Place("Meadow", "a peaceful meadow")
 Place("Forest", "a dark, murky forest.")
+
+Place("Chipotle")
+Place("Meadow")
+Place("Forest")
+Place("Desert")
+Place("Home")
+Place("Romania")
+Place("Arctic")
+Place("Space")
+Place("Jungle")
+
+places.get("Meadow").set_neighbors(['Forest'])
+places.get("Forest").set_neighbors(['Meadow', 'Desert', 'Home', 'Romania', 'Arctic', 'Space', 'Jungle'])
+places.get("Jungle").set_neighbors(['Meadow', 'Desert', 'Home', 'Romania', 'Arctic', 'Space'])
+places.get("Space").set_neighbors(['Meadow', 'Desert', 'Home', 'Romania', 'Arctic', 'Jungle'])
+places.get("Arctic").set_neighbors(['Meadow', 'Desert', 'Home', 'Romania', 'Jungle', 'Space'])
+places.get("Romania").set_neighbors(['Meadow', 'Desert', 'Home', 'Jungle', 'Arctic', 'Space'])
+places.get("Home").set_neighbors(['Meadow', 'Desert', 'Jungle', 'Romania', 'Arctic', 'Space', 'Chipotle'])
+places.get("Desert").set_neighbors(['Meadow', 'Jungle', 'Home', 'Romania', 'Arctic', 'Space'])
+places.get("Chipotle").set_neighbors(['Home'])
 
 places.get("Meadow").set_neighbors(['Forest'])
 places.get("Forest").set_neighbors(['Meadow'])
